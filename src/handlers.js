@@ -75,6 +75,18 @@ const getAllBooksHandler = (request, h) => {
       book.name.toLowerCase().includes(searchName),
     );
   }
+  if (query.reading === '0'|| query.reading === '1') {
+    const readingResult = query.reading === '1';
+    filteredBooks = filteredBooks.filter((book) =>
+      book.reading === readingResult,
+    );
+  }
+  if (query.finished === '0'|| query.finished === '1') {
+    const finishedResult = query.reading === '1';
+    filteredBooks = filteredBooks.filter((book) =>
+      book.finished === finishedResult,
+    );
+  }
   const response = {
     status: 'success',
     data: {
