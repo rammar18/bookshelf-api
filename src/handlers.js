@@ -82,7 +82,7 @@ const getAllBooksHandler = (request, h) => {
     );
   }
   if (query.finished === '0'|| query.finished === '1') {
-    const finishedResult = query.reading === '1';
+    const finishedResult = query.finished === '1';
     filteredBooks = filteredBooks.filter((book) =>
       book.finished === finishedResult,
     );
